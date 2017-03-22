@@ -13,11 +13,13 @@ public class Persona {
     private boolean movimiento = true;
     private Ubicacion ubicacion;
     private Boton boton;
+    private String nombre;
 
-    public Persona(int ID, Ubicacion ubicacion, Boton boton) {
+    public Persona(int ID, Ubicacion ubicacion, Boton boton, String nombre) {
         this.ID = ID;
         this.ubicacion = ubicacion;
         this.boton = boton;
+        this.nombre = nombre;
     }
 
     public int getID() {
@@ -52,7 +54,11 @@ public class Persona {
         this.ubicacion = ubicacion;
     }
 
-    
+    public String getNombre() {
+      return nombre;
+    }
+
+
     public void puertaAbierta(){
         Puerta puertaUbicacion = new Puerta();
         puertaUbicacion.abierta = true;

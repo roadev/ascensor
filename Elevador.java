@@ -16,7 +16,7 @@ public class Elevador extends Ubicacion{
     private boolean llamado = false;
     private Ubicacion pisoActual;
     private Ubicacion pisoDestino;
-    private int tiempoRecorrido = 5;
+    private final int tiempoRecorrido = 5;
 
     private Puerta puertaElevador;
     private Boton botonElevador;
@@ -24,7 +24,13 @@ public class Elevador extends Ubicacion{
     private Ubicacion ubicacion;
     private int capacidad;
 
-    private ArrayList<Persona> personas = new ArrayList<>();
+    private ArrayList<Persona> personas;
+
+    public Elevador(int capacidad, String nombreUbicacion) {
+      super(nombreUbicacion);
+      this.capacidad = capacidad;
+      personas = new ArrayList<>();
+    }
 
     public void viajar() {
         movimiento = true;
@@ -37,6 +43,18 @@ public class Elevador extends Ubicacion{
     public void entrarElevador(Persona persona) {
       personas.add(persona);
       establecerCapacidad(obtenerCapacidad() - 1);
+    }
+
+    public ArrayList<Persona> obtenerPersonas() {
+      return personas;
+    }
+
+    public String imprimirPersonas() {
+      String resultado = "";
+      for (int i = 0; i < personas.size(); i++) {
+        resultado += personas.get(i).getNombre() + "\n";
+      }
+      return resultado;
     }
 
     public void salirElevador() {

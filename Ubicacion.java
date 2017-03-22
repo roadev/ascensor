@@ -10,11 +10,10 @@
 public class Ubicacion {
 
     private String nombreUbicacion;
-    private int capacidad = 1;
     public Boton botonUbicacion;
     public Puerta puertaUbicacion;
 
-    public void establecerNombreUbicacion(String nombreUbicacion){
+    public Ubicacion(String nombreUbicacion){
         this.nombreUbicacion = nombreUbicacion;
     }
 
