@@ -24,6 +24,10 @@ public class SimularAscensor {
 
         System.out.println("Capacidad actual: " + ascensor.obtenerCapacidad() + "\nPersonas: " + "\n" + ascensor.imprimirPersonas());
 
+        ascensor.salirElevador(ascensor.buscarPersonaPorId(1000));
+
+        System.out.println("Capacidad actual: " + ascensor.obtenerCapacidad() + "\nPersonas: " + "\n" + ascensor.imprimirPersonas());
+
         System.out.println(jhon.getUbicacion().obtenerNombreUbicacion()+" "+jhon.getBoton().getEstado());
 
 

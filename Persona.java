@@ -22,6 +22,10 @@ public class Persona {
         this.nombre = nombre;
     }
 
+    public Persona() {
+      
+    }
+
     public int getID() {
         return ID;
     }

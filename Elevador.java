@@ -33,11 +33,15 @@ public class Elevador extends Ubicacion{
     }
 
     public void viajar() {
-        movimiento = true;
+      setMovimiento(true);
+    }
+
+    public void setMovimiento(boolean movimiento) {
+      this.movimiento = movimiento;
     }
 
     public void solictarElevador() {
-        llamado = true;
+      llamado = true;
     }
 
     public void entrarElevador(Persona persona) {
@@ -57,7 +61,22 @@ public class Elevador extends Ubicacion{
       return resultado;
     }
 
-    public void salirElevador() {
+    public void salirElevador(Persona persona) {
+      personas.remove(persona);
+      establecerCapacidad(obtenerCapacidad() + 1);
+    }
+
+    public Persona buscarPersonaPorId(int id) {
+
+      Persona persona = new Persona();
+
+      for (int a = 0; a < personas.size(); a++) {
+        if (personas.get(a).getID() == id) {
+          persona = personas.get(a);
+        }
+      }
+
+      return persona;
 
     }
 
